@@ -1,0 +1,39 @@
+<% title='Tabla de usuarios' %>
+  <%- include('../base/estructura-head.ejs'); %>
+    <h1>Tabla usuarios</h1>
+    <a href="user/create">Crear usuario</a>
+    <table class="table" border="1">
+      <thead>
+        <tr>
+          <td>Nombre</td>
+          <td>Apellido</td>
+          <td>Email</td>
+          <td colspan="3">Actions</td>
+        </tr>
+      </thead>
+      <tbody>
+        <% for (user of users ) { %>
+          <tr>
+            <td>
+              <%= user.firstName %>
+            </td>
+            <td>
+              <%= user.lastName %>
+            </td>
+            <td>
+              <%= user.email %>
+            </td>
+            <td>
+              <a href="user/<%= user.id %>">ver usuario</a>
+            </td>
+            <td>
+              <a href="user/update/<%= user.id %>">modificar</a>
+            </td>
+            <td>
+              <a href="user/delete/<%= user.id %>">eliminar</a>
+            </td>
+          </tr>
+          <% } %>
+      </tbody>
+    </table>
+    <%- include('../base/estructura-foot.ejs'); %>

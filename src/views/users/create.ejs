@@ -1,0 +1,10 @@
+<% title='Crear usuario' %>
+  <%- include('../base/estructura-head.ejs'); %>
+    <h4>Crear usuario</h4>
+    <form action="/user/create" method="post">
+      <input placeholder="first name" name="firstName" />
+      <input placeholder="last name" name="lastName" />
+      <input placeholder="email" name="email" />
+      <button type="submit">Enviar</button>
+    </form>
+    <%- include('../base/estructura-foot.ejs'); %>

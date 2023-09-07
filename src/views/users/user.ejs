@@ -1,0 +1,15 @@
+<% title='Ver usuario' %>
+  <%- include('../base/estructura-head.ejs'); %>
+    <h1>Informacion del usuario: <%= user.firstName %>
+    </h1>
+    <p>
+      <%= user.firstName %>
+    </p>
+    <p>
+      <%= user.lastName %>
+    </p>
+    <p>
+      <%= user.email %>
+    </p>
+    <p><a href="/user">volver</a></p>
+    <%- include('../base/estructura-foot.ejs'); %>

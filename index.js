@@ -8,6 +8,9 @@ const postRoutes = require('./src/routes/post.routes')
 const server = express()
 const port = 3000
 
+server.set('view engine', 'ejs')
+server.set('views', __dirname + '/src/views')
+
 server.use(express.json())
 server.use(express.urlencoded({ extended: false }))
 
@@ -17,8 +20,8 @@ server.use('/second', secondRoutes)
 server.use('/user', userRoutes)
 server.use('/post', postRoutes)
 
-server.get('*', (req, res) => {
-  res.status(404).send('404 - La ruta no existe')
+server.get('/test', (req, res) => {
+  return res.render('base/prueba')
 })
 
 sequelize

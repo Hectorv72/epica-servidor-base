@@ -1,6 +1,8 @@
 const routes = require('express').Router()
-const { responderMensaje, guardarDatos } = require('../controllers/main.controllers.js')
+const { responderMensaje, guardarDatos, getPersonas } = require('../controllers/main.controllers.js')
 const middlewares = require('../middlewares/main.middlewares.js')
+
+routes.get('/personas', getPersonas)
 
 routes.get('/:nombre', middlewares.mostrarMetodo, responderMensaje)
 
